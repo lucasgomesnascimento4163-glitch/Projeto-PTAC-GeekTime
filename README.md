@@ -1,4 +1,6 @@
 ﻿# Projeto-PTAC-GeekTime
+Aluno: Lucas Gomes do Nascimento
+
 Um catálogo pessoal para organizar animes e mangás que o usuário está acompanhando.
 
 Funcionalidades:
