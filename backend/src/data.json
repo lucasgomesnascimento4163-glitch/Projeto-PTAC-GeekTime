@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "titulo": "Frieren",
+    "tipo": "anime",
+    "totalUnidades": 28,
+    "progresso": 12,
+    "favorito": true,
+    "nota": 9,
+    "historico": [
+      {
+        "nota": 8,
+        "data": "2026-10-10T20:00:00.000Z"
+      },
+      {
+        "nota": 9,
+        "data": "2026-10-20T22:10:00.000Z"
+      }
+    ],
+    "deletedAt": "2026-11-06T12:16:04.676Z"
+  },
+  {
+    "id": 2,
+    "titulo": "Vagabond",
+    "tipo": "manga",
+    "totalUnidades": 327,
+    "progresso": 150,
+    "favorito": false,
+    "nota": null,
+    "historico": []
+  },
+  {
+    "id": 3,
+    "titulo": "Attack On Titan",
+    "tipo": "anime",
+    "totalUnidades": 97,
+    "progresso": 83,
+    "favorito": false,
+    "nota": 10,
+    "historico": [
+      {
+        "nota": 10,
+        "data": "2026-11-06T12:15:39.321Z"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "titulo": "Dragon Ball Z",
+    "tipo": "anime",
+    "totalUnidades": 100,
+    "progresso": 50,
+    "favorito": false,
+    "nota": 8,
+    "historico": [
+      {
+        "nota": 8,
+        "data": "2026-11-06T12:24:53.482Z"
+      }
+    ]
+  }
+]
