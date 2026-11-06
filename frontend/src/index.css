@@ -1,0 +1,47 @@
+:root {
+  --preto: #000;
+  --superficie: #161616;
+  --borda: #333;
+  --amarelo: #ffd60a;
+  --branco: #fff;
+  --suave: #b8b8b8;
+  --erro: #ff7b7b;
+
+  --fonte: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --fonte-logo: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Black', sans-serif;
+
+  font: 16px/1.5 var(--fonte);
+  color-scheme: dark;
+  color: var(--branco);
+  background: var(--preto);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: var(--preto);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--amarelo);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
