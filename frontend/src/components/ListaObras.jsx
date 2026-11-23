@@ -49,7 +49,7 @@ export default function ListaObras() {
         setObras(data)
       } catch (e) {
         if (e.name !== 'AbortError') {
-          setErro(mensagemDeErro(e))
+        setErro(e instanceof TypeError ? 'Falha ao carregar obras' : mensagemDeErro(e))
         }
       } finally {
         setCarregando(false)
