@@ -1,12 +1,19 @@
-export function errorHandler(error, _req, res, _next) {
-  if (error.type === 'entity.parse.failed') {
-    return res.status(400).json({ erro: 'JSON inválido' });
+export function erroFormat(status, titulo, detalhe) {
+  return { status, titulo, detalhe, timestamp: new Date().toISOString() };
+}
+
+export function errorHandler(err, _req, res, _next) {
+  if (err.type === 'entity.parse.failed') {
+    return res.status(400).json(erroFormat(400, 'JSON inválido', 'Corpo da requisição malformado'));
   }
 
-  const status = error.statusCode || 500;
+  const status = err.status || err.statusCode || 500;
+  const titulo = err.titulo || (status === 404 ? 'Não encontrado' : status === 409 ? 'Conflito' : status === 400 ? 'Requisição inválida' : 'Erro interno');
+  const detalhe = status === 500 ? 'Erro interno do servidor' : err.message;
+
   if (status === 500) {
-    console.error(error);
-    return res.status(500).json({ erro: 'Erro interno do servidor' });
+    console.error(err);
   }
-  res.status(status).json({ erro: error.message });
+
+  res.status(status).json(erroFormat(status, titulo, detalhe));
 }

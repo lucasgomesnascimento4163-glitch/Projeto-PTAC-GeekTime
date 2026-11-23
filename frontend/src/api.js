@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000'
+const BASE_URL = 'http://localhost:3000/api/v1'
 
 export class ApiError extends Error {
   constructor(status, statusText, message) {
@@ -23,7 +23,7 @@ async function requisicao(caminho, opcoes = {}) {
   const resp = await fetch(url, configuracoes)
   if (!resp.ok) {
     const corpo = await resp.json().catch(() => ({}))
-    const erro = corpo.erro
+    const erro = corpo.detalhe ?? corpo.erro
     const mensagem = erro && typeof erro === 'object' ? Object.values(erro).flat().join(', ') : erro
     throw new ApiError(resp.status, resp.statusText, mensagem)
   }
